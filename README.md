@@ -48,4 +48,9 @@ Run application:
 Task:
 1. Buat `Dockerfile` untuk buat docker image
 2. Buat `docker-compose.yaml` untuk mempermudah mejalankan container `webapps` dan dependency seperti `mysql` database dan lain-lain
-3. Push ke docker registry (docker hub)
+3. Jalankan container tersebut, menggunakan perintah `docker compose up -d` kemudian coba check
+    1. untuk endpoint `/` seperti berikut hasilnya:
+        ![hardcoded](docs/images/hardcode-data.png)
+    2. untuk endpoint `/db` seperti berikut hasilnya:
+        ![db-restapi](docs/images/data-db.png)
+3. jika sudah jalan containernya di local, Push ke docker registry (docker hub) dengan nama image `user-docker-hub/quis-cloud-native-monolith:v1`
