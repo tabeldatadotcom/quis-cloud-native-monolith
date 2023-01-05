@@ -54,3 +54,17 @@ Task:
     2. untuk endpoint `/db` seperti berikut hasilnya:
         ![db-restapi](docs/images/data-db.png)
 3. jika sudah jalan containernya di local, Push ke docker registry (docker hub) dengan nama image `user-docker-hub/quis-cloud-native-monolith:v1`
+
+### Continues Integration (CI)
+
+Setelah build container, tahap selanjutnya buat automation build docker image menggunakan CI/CD tools seperti gitlab ci.
+
+Task:
+
+Buat `.gitlab-ci.yml` untuk melakukana beberapa jobs:
+
+1. Build frontend (laramix)
+2. Build docker image yang di push ke private registry
+    - url: `192.168.100.250:8087` user: `tabeldata` password: `tabeldata`
+    - docker image tag: `192.168.100.250:8087/maggang.tabeldata.com/<username>/quis-cloud-native-monolith:v1`
+3. Jalankan database migration `php artisan migrate`
