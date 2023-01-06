@@ -76,3 +76,10 @@ Setelah membuat automation dengan Gitlab ci, coba buat application deployment re
 1. Buat deployment untuk docker image yang telah dibuat dan dipush ke insecure docker registry
 2. Buat service untuk meng-expose deployment yang telah dibuat menggunakan type `ClusterIP`
 3. Buat ingress untuk meng-expose service tersebut dengan domain `<email>` contoh `software.dimas-maryanto.com` dan rulenya menggunakan `/`
+
+### Kubernetes cluster administration
+
+Setelah membuat kubernetes resources, sekarang temen-temen perlu membuat kubernetes cluster yang telah di siapkan VM, silahkan buat dengan specifikasi seperti berikut:
+
+- Gunakan container runtime (containerd)
+- Gunakan cluster admin (kubeadm)
