@@ -68,3 +68,11 @@ Buat `.gitlab-ci.yml` untuk melakukana beberapa jobs:
     - url: `192.168.100.250:8087` user: `tabeldata` password: `tabeldata`
     - docker image tag: `192.168.100.250:8087/maggang.tabeldata.com/<username>/quis-cloud-native-monolith:v1`
 3. Jalankan database migration `php artisan migrate`
+
+### Orchestration container system
+
+Setelah membuat automation dengan Gitlab ci, coba buat application deployment resource agar container teresbut bisa jlan diatas kubernetes cluster. Temen-temen untuk testing bisa menggunakan local environment seperti minikube, atau kubernetes in docker. Yang perlu temen-temen buat adalah
+
+1. Buat deployment untuk docker image yang telah dibuat dan dipush ke insecure docker registry
+2. Buat service untuk meng-expose deployment yang telah dibuat menggunakan type `ClusterIP`
+3. Buat ingress untuk meng-expose service tersebut dengan domain `<email>` contoh `software.dimas-maryanto.com` dan rulenya menggunakan `/`
